@@ -30,7 +30,7 @@ public class Rating {
     private Integer movieId;
 
     public Rating(Integer rating, String comment, Integer movieId) throws RatingException {
-        if(rating < 0 || rating > 5) throw new RatingException("Invalid rating. Rating should be between 1 and 5");
+        if (rating < 0 || rating > 5) throw new RatingException("Invalid rating. Rating should be between 1 and 5");
         this.rating = rating;
         this.comment = comment;
         this.movieId = movieId;
