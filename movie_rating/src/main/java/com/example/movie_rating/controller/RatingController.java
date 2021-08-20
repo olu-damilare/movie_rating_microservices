@@ -17,15 +17,15 @@ public class RatingController {
     RatingService ratingService;
 
     @PostMapping("/rating")
-    public void addRating(@RequestBody Rating rating){
+    public void addRating(@RequestBody Rating rating) {
         ratingService.addRating(rating);
     }
 
     @GetMapping("/rating/{id}")
-    public Rating getRating(@PathVariable Integer id){
+    public Rating getRating(@PathVariable Integer id) {
         Rating rating = null;
         try {
-           rating = ratingService.getRating(id);
+            rating = ratingService.getRating(id);
         } catch (RatingException e) {
             e.printStackTrace();
         }
@@ -34,7 +34,7 @@ public class RatingController {
     }
 
     @GetMapping("/ratings")
-    public List<Rating> findAll(){
+    public List<Rating> findAll() {
         return ratingService.getRatings();
     }
 
