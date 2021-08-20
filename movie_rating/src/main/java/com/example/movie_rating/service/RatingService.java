@@ -11,7 +11,9 @@ import java.util.List;
 public interface RatingService {
 
     void addRating(Rating rating);
+
     Rating getRating(Integer movieId) throws RatingException;
+
     List<Rating> getRatings();
 
 }
