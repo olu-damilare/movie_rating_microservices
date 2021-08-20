@@ -1,20 +1,20 @@
 package com.example.movie_rating.exceptions;
 
-public class RatingException extends Exception{
+public class RatingException extends Exception {
 
-    public RatingException(String message){
+    public RatingException(String message) {
         super(message);
     }
 
-    public RatingException(){
+    public RatingException() {
         super();
     }
 
-    public RatingException(String message, Throwable ex){
+    public RatingException(String message, Throwable ex) {
         super(message, ex);
     }
 
-    public RatingException(Throwable ex){
+    public RatingException(Throwable ex) {
         super(ex);
     }
 }
