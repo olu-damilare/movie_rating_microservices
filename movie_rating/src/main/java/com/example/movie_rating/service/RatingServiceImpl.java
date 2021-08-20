@@ -10,7 +10,7 @@ import java.util.List;
 
 
 @Service
-public class RatingServiceImpl implements RatingService{
+public class RatingServiceImpl implements RatingService {
 
 
     @Autowired

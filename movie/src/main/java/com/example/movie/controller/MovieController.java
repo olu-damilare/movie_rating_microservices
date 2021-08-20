@@ -21,13 +21,13 @@ public class MovieController {
     MovieService movieService;
 
     @PostMapping("movies/")
-    public void addMovie(@RequestBody Movie movie){
+    public void addMovie(@RequestBody Movie movie) {
 
         movieService.addMovie(movie);
     }
 
     @GetMapping("movies/{movieId}/")
-    public Movie findMovie(@PathVariable Integer movieId){
+    public Movie findMovie(@PathVariable Integer movieId) {
         Movie movie = null;
         try {
             movie = movieService.findMovie(movieId);
@@ -38,26 +38,26 @@ public class MovieController {
     }
 
     @PutMapping("movies/")
-    public void updateMovie(@RequestBody UpdateMovie movieObj){
+    public void updateMovie(@RequestBody UpdateMovie movieObj) {
         movieService.updateMovie(movieObj);
     }
 
     @GetMapping("movies/")
-    public List<Movie> findAll(){
+    public List<Movie> findAll() {
         return movieService.findAll();
     }
 
     @DeleteMapping("movies/{id}")
-    public void deleteMovie(@PathVariable Integer id){
+    public void deleteMovie(@PathVariable Integer id) {
         try {
             movieService.deleteMovie(id);
         } catch (MovieException e) {
             e.printStackTrace();
         }
     }
- 
+
     @RequestMapping("default")
-    public List<Movie> getCatalog(){
+    public List<Movie> getCatalog() {
 
         RestTemplate restTemplate = new RestTemplate();
 
@@ -66,14 +66,14 @@ public class MovieController {
                 new Rating(3, "okay", 2)
         );
 
-       return ratings.stream().map(rating -> {
+        return ratings.stream().map(rating -> {
             try {
-               return new Movie("Avengers", "poster", "synopsis", 2020);
+                return new Movie("Avengers", "poster", "synopsis", 2020);
             } catch (MovieException e) {
                 e.printStackTrace();
                 return null;
             }
-       }).collect(Collectors.toList());
+        }).collect(Collectors.toList());
 
 
     }

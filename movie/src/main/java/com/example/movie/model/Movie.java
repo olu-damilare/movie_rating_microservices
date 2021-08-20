@@ -10,7 +10,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 
-
 @Entity
 @Data
 @AllArgsConstructor
@@ -36,11 +35,12 @@ public class Movie {
 
 
     public Movie(String name, String poster, String synopsis, Integer yearOfProduction) throws MovieException {
-        if(yearOfProduction == null) throw new MovieException("Please provide the year of production");
-        if(yearOfProduction <= 100) throw new MovieException("Invalid year");
-        if(yearOfProduction > LocalDateTime.now().getYear()) throw new MovieException("Provided year is later than current year");
-        if(name == null) throw new MovieException("Please provide the name of the movie");
-        if(synopsis == null) throw new MovieException("Please provide a synopsis for the movie");
+        if (yearOfProduction == null) throw new MovieException("Please provide the year of production");
+        if (yearOfProduction <= 100) throw new MovieException("Invalid year");
+        if (yearOfProduction > LocalDateTime.now().getYear())
+            throw new MovieException("Provided year is later than current year");
+        if (name == null) throw new MovieException("Please provide the name of the movie");
+        if (synopsis == null) throw new MovieException("Please provide a synopsis for the movie");
 
         this.name = name;
         this.poster = poster;

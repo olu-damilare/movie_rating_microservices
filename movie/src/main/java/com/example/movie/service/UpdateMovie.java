@@ -17,8 +17,7 @@ public class UpdateMovie {
     private Integer newYearOfProduction;
 
 
-
-    Movie updateMovie(UpdateMovie movieObj){
+    Movie updateMovie(UpdateMovie movieObj) {
         Movie newMovie = new Movie();
         newMovie.setMovieId(movieObj.getId());
         newMovie.setName(movieObj.getNewName());
@@ -29,8 +28,6 @@ public class UpdateMovie {
         return newMovie;
 
     }
-
-
 
 
 }

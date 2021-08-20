@@ -27,7 +27,7 @@ public class Rating {
     private String comment;
     private Integer movieId;
 
-    public Rating(Integer rating, String comment, Integer movieId){
+    public Rating(Integer rating, String comment, Integer movieId) {
         this.rating = rating;
         this.comment = comment;
         this.movieId = movieId;

@@ -11,9 +11,13 @@ import java.util.List;
 public interface MovieService {
 
     Movie findMovie(Integer id) throws MovieException;
+
     void addMovie(Movie movie);
+
     void updateMovie(UpdateMovie movieObj);
+
     List<Movie> findAll();
+
     void deleteMovie(Integer id) throws MovieException;
 
 
