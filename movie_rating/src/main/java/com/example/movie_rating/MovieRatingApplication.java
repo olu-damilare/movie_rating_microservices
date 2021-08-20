@@ -11,8 +11,9 @@ public class MovieRatingApplication {
     public static void main(String[] args) {
         SpringApplication.run(MovieRatingApplication.class, args);
     }
+
     @Bean
-    public RestTemplate getRestTemplate(){
+    public RestTemplate getRestTemplate() {
         return new RestTemplate();
     }
 
