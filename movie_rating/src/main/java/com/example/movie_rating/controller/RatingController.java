@@ -21,11 +21,11 @@ public class RatingController {
         ratingService.addRating(rating);
     }
 
-    @GetMapping("/rating/{id}")
-    public Rating getRating(@PathVariable Integer id) {
+    @GetMapping("/rating/{movieId}")
+    public Rating getRating(@PathVariable Integer movieId) {
         Rating rating = null;
         try {
-            rating = ratingService.getRating(id);
+            rating = ratingService.getRating(movieId);
         } catch (RatingException e) {
             e.printStackTrace();
         }
