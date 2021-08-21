@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Service
-public class MovieServiceImpl implements MovieService{
+public class MovieServiceImpl implements MovieService {
 
     @Autowired
     MovieRepository movieRepository;
@@ -32,10 +32,11 @@ public class MovieServiceImpl implements MovieService{
         try {
 
             Movie movieToUpdate = findMovie(movieObj.getId());
-            if(movieObj.getNewName() != null) movieToUpdate.setName(movieObj.getNewName());
-            if(movieObj.getNewPoster() != null) movieToUpdate.setPoster(movieObj.getNewPoster());
-            if(movieObj.getNewSynopsis() != null) movieToUpdate.setSynopsis(movieObj.getNewSynopsis());
-            if(movieObj.getNewYearOfProduction() != null) movieToUpdate.setYearOfProduction(movieObj.getNewYearOfProduction());
+            if (movieObj.getNewName() != null) movieToUpdate.setName(movieObj.getNewName());
+            if (movieObj.getNewPoster() != null) movieToUpdate.setPoster(movieObj.getNewPoster());
+            if (movieObj.getNewSynopsis() != null) movieToUpdate.setSynopsis(movieObj.getNewSynopsis());
+            if (movieObj.getNewYearOfProduction() != null)
+                movieToUpdate.setYearOfProduction(movieObj.getNewYearOfProduction());
 
             movieRepository.save(movieToUpdate);
         } catch (MovieException e) {
@@ -51,7 +52,7 @@ public class MovieServiceImpl implements MovieService{
 
     @Override
     public void deleteMovie(Integer id) throws MovieException {
-            Movie movieToDelete = findMovie(id);
-            movieRepository.delete(movieToDelete);
+        Movie movieToDelete = findMovie(id);
+        movieRepository.delete(movieToDelete);
     }
 }
