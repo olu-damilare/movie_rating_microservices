@@ -23,7 +23,9 @@ public class RatingServiceImpl implements RatingService {
 
     @Override
     public Rating getRating(Integer movieId) throws RatingException {
-        return ratingRepository.getRating(movieId);
+        Double movieRating = ratingRepository.getRating(movieId);
+        return new Rating(movieId, movieRating);
+
     }
 
     @Override
