@@ -25,14 +25,19 @@ public class Rating {
     )
     @Id
     private Integer ratingId;
-    private Number rating;
+    private Double rating;
     private String comment;
     private Integer movieId;
 
-    public Rating(Integer rating, String comment, Integer movieId) throws RatingException {
+    public Rating(Double rating, String comment, Integer movieId) throws RatingException {
         if (rating < 0 || rating > 5) throw new RatingException("Invalid rating. Rating should be between 1 and 5");
         this.rating = rating;
         this.comment = comment;
         this.movieId = movieId;
+    }
+
+    public Rating(Integer movieId, Double rating){
+        this.movieId = movieId;
+        this.rating = rating;
     }
 }
