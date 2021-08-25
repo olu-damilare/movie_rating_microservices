@@ -18,11 +18,10 @@ public class MovieController {
 
     @PostMapping("movies")
     public void addMovie(@RequestBody Movie movie) {
-
         movieService.addMovie(movie);
     }
 
-    @GetMapping("movies/{movieId}/")
+    @GetMapping("movies/{movieId}")
     public Movie findMovie(@PathVariable Integer movieId) {
         Movie movie = null;
         try {
