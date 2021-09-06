@@ -20,7 +20,7 @@ public class UpdateMovie {
     Movie updateMovie(UpdateMovie movieObj) {
         Movie newMovie = new Movie();
         newMovie.setMovieId(movieObj.getId());
-        newMovie.setName(movieObj.getNewName());
+        newMovie.setTitle(movieObj.getNewName());
         newMovie.setPoster(movieObj.getNewPoster());
         newMovie.setSynopsis(movieObj.getNewSynopsis());
         newMovie.setYearOfProduction(movieObj.getNewYearOfProduction());
