@@ -27,7 +27,7 @@ public class Movie {
     )
     @Id
     private Integer movieId;
-    private String name;
+    private String title;
     private String poster;
     private String synopsis;
     private LocalDate dateOfEntry;
@@ -42,10 +42,21 @@ public class Movie {
         if (name == null) throw new MovieException("Please provide the name of the movie");
         if (synopsis == null) throw new MovieException("Please provide a synopsis for the movie");
 
-        this.name = name;
+        this.title = name;
         this.poster = poster;
         this.synopsis = synopsis;
         dateOfEntry = LocalDate.now();
         this.yearOfProduction = yearOfProduction;
+    }
+
+
+    public Movie(String movieId, String title, String synopsis, String release_date) {
+        this.movieId = Integer.parseInt(movieId);
+        this.title = title;
+        this.synopsis = synopsis;
+
+        String[] dateVal = release_date.split("-");
+        yearOfProduction = Integer.parseInt(dateVal[0]);
+
     }
 }
