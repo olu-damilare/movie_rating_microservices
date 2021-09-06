@@ -40,8 +40,8 @@ public class RatingController {
         List<Rating> ratings = null;
         try {
             ratings = Arrays.asList(
-                    new Rating(3.0, "okay", 1),
-                    new Rating(5.0, "impressive", 2)
+                    new Rating(3.0, "okay", 500),
+                    new Rating(5.0, "impressive", 502 )
             );
         } catch (RatingException e) {
             e.printStackTrace();
