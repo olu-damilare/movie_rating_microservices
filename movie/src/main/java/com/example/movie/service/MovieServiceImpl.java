@@ -3,6 +3,7 @@ package com.example.movie.service;
 import com.example.movie.exception.MovieException;
 import com.example.movie.model.Movie;
 import com.example.movie.repository.MovieRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +11,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Service
+@Slf4j
 public class MovieServiceImpl implements MovieService {
 
     @Autowired
@@ -17,6 +19,7 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public Movie findMovie(Integer id) throws MovieException {
+        log.info("ggggg");
         return movieRepository.findById(id).orElseThrow(() -> new MovieException("Invalid movie id"));
     }
 
@@ -32,7 +35,7 @@ public class MovieServiceImpl implements MovieService {
         try {
 
             Movie movieToUpdate = findMovie(movieObj.getId());
-            if (movieObj.getNewName() != null) movieToUpdate.setName(movieObj.getNewName());
+            if (movieObj.getNewName() != null) movieToUpdate.setTitle(movieObj.getNewName());
             if (movieObj.getNewPoster() != null) movieToUpdate.setPoster(movieObj.getNewPoster());
             if (movieObj.getNewSynopsis() != null) movieToUpdate.setSynopsis(movieObj.getNewSynopsis());
             if (movieObj.getNewYearOfProduction() != null)
