@@ -9,6 +9,7 @@ import java.util.List;
 public class UserRating {
 
     private List<Rating> userRating;
+    private String userId;
 
     public UserRating(List<Rating> userRating) {
         this.userRating = userRating;
