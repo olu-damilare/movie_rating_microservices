@@ -1,0 +1,11 @@
+#my.greeting: Welcome to slimdaddy's haven from test
+#list.values: One,Two,Three
+#
+#db:
+#  Values: "{connectionString: 'http://___', userName: 'slim', password: 'pass'}"
+#
+#  connection: test-connection
+#  host: 127.0.0.1
+#  port: 2400
+#
+#management.endpoints.web.exposure.include: "*"
